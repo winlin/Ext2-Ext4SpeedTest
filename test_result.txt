@@ -1,0 +1,144 @@
+##########################################################################################
+## mount ext2 without any flag
+##########################################################################################
+/home/gtliu/test_ext/ext2.img on /home/gtliu/test_ext/ext2_mount type ext2 (rw)
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext2_mount# ls -lh
+total 31M
+-rw-r--r-- 1 root root 2.3M Nov  5 20:08 0
+-rw-r--r-- 1 root root 2.1M Nov  5 20:08 1
+-rw-r--r-- 1 root root 2.2M Nov  5 20:08 2
+-rw-r--r-- 1 root root 3.0M Nov  5 20:08 3
+-rw-r--r-- 1 root root 4.6M Nov  5 20:09 4
+-rw-r--r-- 1 root root 4.5M Nov  5 20:09 5
+-rw-r--r-- 1 root root 2.8M Nov  5 20:09 6
+-rw-r--r-- 1 root root 4.0M Nov  5 20:09 7
+-rw-r--r-- 1 root root 2.7M Nov  5 20:10 8
+-rw-r--r-- 1 root root 2.2M Nov  5 20:10 9
+===========
+read   31448390 Bytes(30711.000000 KB) using  33.000000 seconds SPEED=905.000000 KB/s
+write   31448390 Bytes(30711.000000 KB) using  39.000000 seconds SPEED=779.000000 KB/s
+
+
+##########################################################################################
+## mount ext4 without any flag
+##########################################################################################
+/home/gtliu/test_ext/ext4.img on /home/gtliu/test_ext/ext4_mount type ext4 (rw)
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext4_mount# ls -lh
+total 25M
+-rw-r--r-- 1 root root 3.1M Nov  5 20:12 0
+-rw-r--r-- 1 root root 2.1M Nov  5 20:13 1
+-rw-r--r-- 1 root root 4.1M Nov  5 20:13 2
+-rw-r--r-- 1 root root 2.0M Nov  5 20:13 3
+-rw-r--r-- 1 root root 2.1M Nov  5 20:13 4
+-rw-r--r-- 1 root root 2.5M Nov  5 20:14 5
+-rw-r--r-- 1 root root 2.0M Nov  5 20:14 6
+-rw-r--r-- 1 root root 2.0M Nov  5 20:14 7
+-rw-r--r-- 1 root root 2.7M Nov  5 20:14 8
+-rw-r--r-- 1 root root 2.7M Nov  5 20:14 9
+===========
+read   26013420 Bytes(25403.000000 KB) using  30.000000 seconds SPEED=819.000000 KB/s
+write   26013420 Bytes(25403.000000 KB) using  35.000000 seconds SPEED=708.000000 KB/s
+
+##########################################################################################
+## mount ext4 with flag:(rw,noatime,errors=remount-ro,commit=5)
+##########################################################################################
+/home/gtliu/test_ext/ext4-optimize.img on /home/gtliu/test_ext/ext4-optimize_mount type ext4 (rw,noatime,errors=remount-ro,commit=5)
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext4-optimize_mount# ls -lh
+total 29M
+-rw-r--r-- 1 root root 2.7M Nov  5 20:18 0
+-rw-r--r-- 1 root root 3.1M Nov  5 20:18 1
+-rw-r--r-- 1 root root 3.0M Nov  5 20:19 2
+-rw-r--r-- 1 root root 1.3M Nov  5 20:19 3
+-rw-r--r-- 1 root root 3.6M Nov  5 20:19 4
+-rw-r--r-- 1 root root 4.1M Nov  5 20:19 5
+-rw-r--r-- 1 root root 2.4M Nov  5 20:20 6
+-rw-r--r-- 1 root root 2.9M Nov  5 20:20 7
+-rw-r--r-- 1 root root 2.0M Nov  5 20:20 8
+-rw-r--r-- 1 root root 3.5M Nov  5 20:20 9
+==========
+read   29507100 Bytes(28815.000000 KB) using  33.000000 seconds SPEED=864.000000 KB/s
+write   29507100 Bytes(28815.000000 KB) using  38.000000 seconds SPEED=750.000000 KB/s
+
+
+##########################################################################################
+## mount ext4 with flag:(rw,noatime,errors=remount-ro,data=writeback,commit=5)
+##########################################################################################
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext4-optimize_mount# ls -lh
+total 33M
+-rw-r--r-- 1 root root 1.9M Nov  5 21:05 0
+-rw-r--r-- 1 root root 2.8M Nov  5 21:05 1
+-rw-r--r-- 1 root root 3.1M Nov  5 21:06 2
+-rw-r--r-- 1 root root 3.7M Nov  5 21:06 3
+-rw-r--r-- 1 root root 2.2M Nov  5 21:06 4
+-rw-r--r-- 1 root root 4.0M Nov  5 21:06 5
+-rw-r--r-- 1 root root 3.9M Nov  5 21:07 6
+-rw-r--r-- 1 root root 3.0M Nov  5 21:07 7
+-rw-r--r-- 1 root root 3.6M Nov  5 21:07 8
+-rw-r--r-- 1 root root 4.9M Nov  5 21:08 9
+==========
+read   34157500 Bytes(33356.000000 KB) using  34.000000 seconds SPEED=954.000000 KB/s
+write   34157500 Bytes(33356.000000 KB) using  40.000000 seconds SPEED=813.000000 KB/s
+
+
+##########################################################################################
+## mount ext4 with flag:(rw,noatime,errors=remount-ro,commit=8)
+##########################################################################################
+/home/gtliu/test_ext/ext4-optimize.img on /home/gtliu/test_ext/ext4-optimize_mount type ext4 (rw,noatime,errors=remount-ro,commit=8)
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext4-optimize_mount# ls -lh
+total 29M
+-rw-r--r-- 1 root root 1.8M Nov  5 20:55 0
+-rw-r--r-- 1 root root 4.4M Nov  5 20:55 1
+-rw-r--r-- 1 root root 2.5M Nov  5 20:55 2
+-rw-r--r-- 1 root root 3.3M Nov  5 20:56 3
+-rw-r--r-- 1 root root 3.4M Nov  5 20:56 4
+-rw-r--r-- 1 root root 2.8M Nov  5 20:56 5
+-rw-r--r-- 1 root root 2.9M Nov  5 20:56 6
+-rw-r--r-- 1 root root 2.9M Nov  5 20:57 7
+-rw-r--r-- 1 root root 1.7M Nov  5 20:57 8
+-rw-r--r-- 1 root root 2.9M Nov  5 20:57 9
+==========
+read   29472330 Bytes(28781.000000 KB) using  32.000000 seconds SPEED=874.000000 KB/s
+write   29472330 Bytes(28781.000000 KB) using  38.000000 seconds SPEED=751.000000 KB/s
+
+##########################################################################################
+## mount ext4 without journal with flag:(rw,noatime,barrier=0,data=writeback,errors=remount-ro,commit=5)
+##########################################################################################
+/home/gtliu/test_ext/ext4-nojournal.img on /home/gtliu/test_ext/ext4-nojournal_mount type ext4 (rw,noatime,barrier=0,data=writeback,errors=remount-ro)
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext4-nojournal_mount/# ls -lh 
+total 36M
+-rw-r--r-- 1 root root 2.8M Nov  5 20:21 0
+-rw-r--r-- 1 root root 5.2M Nov  5 20:21 1
+-rw-r--r-- 1 root root 4.5M Nov  5 20:22 2
+-rw-r--r-- 1 root root 2.9M Nov  5 20:22 3
+-rw-r--r-- 1 root root 4.8M Nov  5 20:22 4
+-rw-r--r-- 1 root root 4.4M Nov  5 20:22 5
+-rw-r--r-- 1 root root 3.3M Nov  5 20:23 6
+-rw-r--r-- 1 root root 3.4M Nov  5 20:23 7
+-rw-r--r-- 1 root root 2.3M Nov  5 20:23 8
+-rw-r--r-- 1 root root 2.0M Nov  5 20:23 9
+===========
+read   36812960 Bytes(35950.000000 KB) using  37.000000 seconds SPEED=965.000000 KB/s
+write   36812960 Bytes(35950.000000 KB) using  43.000000 seconds SPEED=821.000000 KB/s
+
+##########################################################################################
+## mount ext4 without journal with flag:(rw,noatime,barrier=0,data=order,errors=remount-ro,commit=5)
+##########################################################################################
+/home/gtliu/test_ext/ext4-nojournal.img on /home/gtliu/test_ext/ext4-nojournal_mount type ext4 (rw,noatime,barrier=0,data=order,errors=remount-ro)
+root@gtliu-OptiPlex-9010:/home/gtliu/test_ext/ext4-nojournal_mount/# ls -lh 
+total 27M
+-rw-r--r-- 1 root root 2.5M Nov  5 20:37 0
+-rw-r--r-- 1 root root 3.0M Nov  5 20:37 1
+-rw-r--r-- 1 root root 2.1M Nov  5 20:37 2
+-rw-r--r-- 1 root root 2.9M Nov  5 20:38 3
+-rw-r--r-- 1 root root 4.0M Nov  5 20:38 4
+-rw-r--r-- 1 root root 2.4M Nov  5 20:38 5
+-rw-r--r-- 1 root root 2.4M Nov  5 20:38 6
+-rw-r--r-- 1 root root 3.4M Nov  5 20:39 7
+-rw-r--r-- 1 root root 1.7M Nov  5 20:39 8
+-rw-r--r-- 1 root root 2.8M Nov  5 20:39 9
+==========
+read   27964560 Bytes(27309.000000 KB) using  31.000000 seconds SPEED=862.000000 KB/s
+write   27964560 Bytes(27309.000000 KB) using  36.000000 seconds SPEED=744.000000 KB/s
+
+
+##########################################################################################
